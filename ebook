@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slash Your Energy Bills to £0 - Free eBook + £50 Credit</title>
+<style>
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f7f8;
+        color: #333;
+        text-align: center;
+    }
+    header {
+        background: linear-gradient(135deg, #2b7a78, #3aafa9);
+        color: white;
+        padding: 60px 20px;
+    }
+    header h1 {
+        font-size: 2.8rem;
+        margin: 0 0 20px;
+    }
+    header p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        border-radius: 12px;
+        padding: 40px 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #2b7a78;
+        margin-top: 0;
+    }
+    p {
+        line-height: 1.6;
+        text-align: center;
+    }
+    .book-image {
+        margin: 30px 0;
+    }
+    .book-image img {
+        max-width: 250px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .counters {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+        flex-wrap: wrap;
+        text-align: center;
+        gap: 40px;
+    }
+    .counter {
+        margin: 20px;
+    }
+    .counter h3 {
+        font-size: 2rem;
+        color: #3aafa9;
+        margin: 0;
+    }
+    .counter p {
+        margin: 5px 0 0;
+        font-size: 1rem;
+    }
+    .testimonial {
+        background: #f1f5f6;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px auto;
+        font-style: italic;
+        max-width: 600px;
+    }
+    .highlight {
+        color: #ff7f50;
+        font-weight: bold;
+    }
+    .steps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin: 40px 0;
+        text-align: center;
+    }
+    .step {
+        background: #f1f5f6;
+        border-radius: 8px;
+        padding: 20px 30px;
+        max-width: 600px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    form {
+        margin-top: 30px;
+        text-align: left;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    input[type="text"], input[type="email"], select {
+        width: 100%;
+        padding: 12px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    button {
+        margin-top: 20px;
+        background: #ff7f50;
+        color: white;
+        border: none;
+        padding: 18px 25px;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.3s;
+    }
+    button:hover {
+        background: #e56a3d;
+    }
+    .consent {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    .consent input {
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Slash Your Energy Bills to £0!</h1>
+    <p>Download my <span class="highlight">FREE eBook</span> and claim a <span class="highlight">£50 energy credit</span> with EDF or Octopus. Learn the exact strategies I’ve used to help hundreds of households and businesses save thousands on their energy bills.</p>
+</header>
+
+<div class="container">
+    <h2>About the eBook</h2>
+    <p>My name is Ellis, and I’ve been working in the energy and renewable sector for over 10 years. I’ve helped over <span class="highlight">300 households and businesses</span> switch energy providers, implement renewable tech like solar panels and heat pumps, and save thousands. This eBook distills my experience into easy-to-follow steps you can apply immediately.</p>
+    
+    <div class="book-image">
+        <img src="https://via.placeholder.com/250x350?text=Your+eBook+Cover" alt="eBook Cover">
+    </div>
+
+    <div class="steps">
+        <div class="step">
+            <h3>Step 1: Purchase the eBook</h3>
+            <p>Unlock industry secrets and practical strategies to immediately reduce your energy bills.</p>
+        </div>
+        <div class="step">
+            <h3>Step 2: Receive Your Email</h3>
+            <p>Get your eBook download link and access your exclusive £50 energy credit referral code.</p>
+        </div>
+        <div class="step">
+            <h3>Step 3: Claim Your £50 Credit</h3>
+            <p>Follow the instructions in your email to see if you are eligible and start saving instantly!</p>
+        </div>
+    </div>
+
+    <div class="counters">
+        <div class="counter">
+            <h3 id="households">0</h3>
+            <p>Households & Businesses Helped</p>
+        </div>
+        <div class="counter">
+            <h3 id="savings">0</h3>
+            <p>Estimated £ Saved</p>
+        </div>
+        <div class="counter">
+            <h3 id="projects">0</h3>
+            <p>Renewable Projects Implemented</p>
+        </div>
+    </div>
+
+    <div class="testimonial">
+        "Thanks to this guide, I saved over £1,200 on my annual energy bills! The steps are simple and actionable." - Jane D.
+    </div>
+    <div class="testimonial">
+        "Ellis’s strategies helped our business decide on solar panels. Incredible savings!" - Mark T.
+    </div>
+
+    <h2>Get Your Free eBook & £50 Credit</h2>
+    <p>Fill out the form below to download your eBook and claim your £50 credit. Don’t miss this opportunity to start saving immediately!</p>
+    
+    <form id="ebookForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+        
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+        
+        <label for="energyProvider">Current Energy Provider</label>
+        <select id="energyProvider" name="energyProvider" required>
+            <option value="">Select your provider</option>
+            <option value="EDF">EDF</option>
+            <option value="Octopus">Octopus</option>
+            <option value="Other">Other</option>
+        </select>
+        
+        <div class="consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I agree to share my information with trusted partners to receive personalized energy offers. I understand I can opt out at any time.</label>
+        </div>
+        
+        <button type="submit">Download My Free eBook & Claim £50 Credit</button>
+    </form>
+</div>
+
+<script>
+// Rolling counters
+const counters = {
+    households: 310,   // Updated number
+    savings: 500000,
+    projects: 270
+};
+
+function animateCounter(id, target) {
+    const el = document.getElementById(id);
+    let count = 0;
+    const increment = target / 100; 
+    const step = () => {
+        count += increment;
+        if(count < target) {
+            el.innerText = Math.floor(count).toLocaleString();
+            requestAnimationFrame(step);
+        } else {
+            el.innerText = target.toLocaleString();
+        }
+    };
+    step();
+}
+
+animateCounter('households', counters.households);
+animateCounter('savings', counters.savings);
+animateCounter('projects', counters.projects);
+
+// Form submission
+document.getElementById('ebookForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Thank you! Your eBook download link and referral code have been sent to your email.');
+});
+</script>
+
+</body>
+</html>
