@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slash Your Energy Bills to £0 - Free eBook + £50 Credit</title>
+<title>Slash Your Energy Bills to £0 - eBook + £50 Credit</title>
 <style>
     body {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -148,7 +148,7 @@
 
 <header>
     <h1>Slash Your Energy Bills to £0!</h1>
-    <p>Download my <span class="highlight">FREE eBook</span> and claim a <span class="highlight">£50 energy credit</span> with EDF or Octopus. Learn the exact strategies I’ve used to help hundreds of households and businesses save thousands on their energy bills.</p>
+    <p>Download my <span class="highlight">eBook for just £2.50</span> and claim a <span class="highlight">£50 energy credit</span> with EDF or Octopus. Learn the exact strategies I’ve used to help hundreds of households and businesses save thousands on their energy bills.</p>
 </header>
 
 <div class="container">
@@ -162,7 +162,7 @@
     <div class="steps">
         <div class="step">
             <h3>Step 1: Purchase the eBook</h3>
-            <p>Unlock industry secrets and practical strategies to immediately reduce your energy bills.</p>
+            <p>Unlock industry secrets and practical strategies to immediately reduce your energy bills for only £2.50.</p>
         </div>
         <div class="step">
             <h3>Step 2: Receive Your Email</h3>
@@ -196,8 +196,8 @@
         "Ellis’s strategies helped our business decide on solar panels. Incredible savings!" - Mark T.
     </div>
 
-    <h2>Get Your Free eBook & £50 Credit</h2>
-    <p>Fill out the form below to download your eBook and claim your £50 credit. Don’t miss this opportunity to start saving immediately!</p>
+    <h2>Purchase Your eBook & Claim £50 Credit</h2>
+    <p>Fill out the form below to buy your eBook for £2.50 and claim your £50 credit.</p>
     
     <form id="ebookForm">
         <label for="name">Full Name</label>
@@ -213,20 +213,27 @@
             <option value="Octopus">Octopus</option>
             <option value="Other">Other</option>
         </select>
+
+        <label for="payment">Payment Method</label>
+        <select id="payment" name="payment" required>
+            <option value="">Select a payment method</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="paypal">PayPal</option>
+        </select>
         
         <div class="consent">
             <input type="checkbox" id="consent" name="consent" required>
             <label for="consent">I agree to share my information with trusted partners to receive personalized energy offers. I understand I can opt out at any time.</label>
         </div>
         
-        <button type="submit">Download My Free eBook & Claim £50 Credit</button>
+        <button type="submit">Buy eBook for £2.50 & Claim £50 Credit</button>
     </form>
 </div>
 
 <script>
 // Rolling counters
 const counters = {
-    households: 310,   // Updated number
+    households: 310,
     savings: 500000,
     projects: 270
 };
@@ -234,7 +241,7 @@ const counters = {
 function animateCounter(id, target) {
     const el = document.getElementById(id);
     let count = 0;
-    const increment = target / 100; 
+    const increment = target / 100;
     const step = () => {
         count += increment;
         if(count < target) {
@@ -254,7 +261,7 @@ animateCounter('projects', counters.projects);
 // Form submission
 document.getElementById('ebookForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    alert('Thank you! Your eBook download link and referral code have been sent to your email.');
+    alert('Thank you! Your eBook purchase and £50 credit instructions have been sent to your email.');
 });
 </script>
 
