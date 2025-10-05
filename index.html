@@ -232,7 +232,9 @@
 </div>
 
 <script>
-// Rolling counters
+// =========================
+// 🔢 Rolling Counters
+// =========================
 const counters = {
     households: 310,
     savings: 500000,
@@ -243,15 +245,17 @@ function animateCounter(id, target) {
     const el = document.getElementById(id);
     let count = 0;
     const increment = target / 100;
-    const step = () => {
+
+    function step() {
         count += increment;
-        if(count < target) {
+        if (count < target) {
             el.innerText = Math.floor(count).toLocaleString();
             requestAnimationFrame(step);
         } else {
             el.innerText = target.toLocaleString();
         }
-    };
+    }
+
     step();
 }
 
@@ -259,10 +263,38 @@ animateCounter('households', counters.households);
 animateCounter('savings', counters.savings);
 animateCounter('projects', counters.projects);
 
-// Form submission
-document.getElementById('ebookForm').addEventListener('submit', function(event) {
+
+// =========================
+// 📩 Form Submission → Google Sheets
+// =========================
+const scriptURL = "https://script.google.com/macros/s/AKfycbyzgORRxICg8hW0B_2gfWH4lo7hOYUyv06eQijgYDv3sPyUGCcI3aBFig05-LuRguKD/exec";
+
+document.getElementById('ebookForm').addEventListener('submit', async (event) => {
     event.preventDefault();
-    alert('Thank you! Your eBook purchase and £50 credit instructions have been sent to your email.');
+
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        energyProvider: document.getElementById('energyProvider').value,
+        payment: document.getElementById('payment').value
+    };
+
+    try {
+        // Using no-cors for Google Apps Script endpoint
+        await fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        alert('✅ Thank you! Your eBook details and £50 credit info will be sent to your email shortly.');
+        document.getElementById('ebookForm').reset();
+
+    } catch (err) {
+        console.error('Submission error:', err);
+        alert('⚠️ Oops, there was an issue submitting the form. Please try again.');
+    }
 });
 </script>
 
