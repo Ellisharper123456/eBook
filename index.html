@@ -142,6 +142,14 @@
         margin-right: 10px;
         vertical-align: middle;
     }
+    /* ✅ Styled form message */
+    #formMessage {
+        display: none;
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
 </style>
 </head>
 <body>
@@ -157,7 +165,6 @@
     
     <div class="book-image">
         <img src="bookimage.jpg" alt="Slash Your Energy Bills eBook Cover">
-
     </div>
 
     <div class="steps">
@@ -226,7 +233,10 @@
             <input type="checkbox" id="consent" name="consent" required>
             <label for="consent">I agree to share my information with trusted partners to receive personalised energy offers. I understand I can opt out at any time.</label>
         </div>
-        
+
+        <!-- ✅ Form message placeholder -->
+        <div id="formMessage"></div>
+
         <button type="submit">Buy eBook for £2.50 & Claim £50 Credit</button>
     </form>
 </div>
@@ -263,13 +273,14 @@ animateCounter('households', counters.households);
 animateCounter('savings', counters.savings);
 animateCounter('projects', counters.projects);
 
-
 // =========================
-// 📩 Form Submission → Google Sheets
+// 📩 Form Submission → Google Sheets (Styled Message)
 // =========================
 const scriptURL = "https://script.google.com/macros/s/AKfycbyzgORRxICg8hW0B_2gfWH4lo7hOYUyv06eQijgYDv3sPyUGCcI3aBFig05-LuRguKD/exec";
+const form = document.getElementById('ebookForm');
+const formMessage = document.getElementById('formMessage');
 
-document.getElementById('ebookForm').addEventListener('submit', async (event) => {
+form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const formData = {
@@ -280,7 +291,6 @@ document.getElementById('ebookForm').addEventListener('submit', async (event) =>
     };
 
     try {
-        // Using no-cors for Google Apps Script endpoint
         await fetch(scriptURL, {
             method: 'POST',
             mode: 'no-cors',
@@ -288,12 +298,21 @@ document.getElementById('ebookForm').addEventListener('submit', async (event) =>
             body: JSON.stringify(formData)
         });
 
-        alert('Thank you for your purchase! Your eBook download link and £50 energy credit instructions have been sent to your email. Please check your inbox (and spam folder just in case).');
-        document.getElementById('ebookForm').reset();
+        // ✅ Show styled success message
+        formMessage.style.display = 'block';
+        formMessage.style.backgroundColor = '#d4edda';
+        formMessage.style.color = '#155724';
+        formMessage.style.border = '1px solid #c3e6cb';
+        formMessage.innerText = 'Thank you! Your eBook download link and £50 energy credit instructions have been sent to your email. Please check your inbox, including spam folder.';
+        form.reset();
 
     } catch (err) {
         console.error('Submission error:', err);
-        alert('⚠️ Oops, there was an issue submitting the form. Please try again.');
+        formMessage.style.display = 'block';
+        formMessage.style.backgroundColor = '#f8d7da';
+        formMessage.style.color = '#721c24';
+        formMessage.style.border = '1px solid #f5c6cb';
+        formMessage.innerText = '⚠️ There was an issue submitting the form. Please try again.';
     }
 });
 </script>
